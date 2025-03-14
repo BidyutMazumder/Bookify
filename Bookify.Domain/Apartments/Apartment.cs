@@ -12,10 +12,8 @@ public sealed class Apartment: Entity
     public Name Name { get; private set; }
     public Description Description { get; private set; }
     public Address Address { get; private set; }
-    public decimal PriceAmount { get; private set; }
-    public string PriceCurrency { get; private set; }
-    public decimal CleeningFeeAmount { get; private set; }
-    public string CleeningFeeCurrency { get; private set; }
+    public Money PriceAmount { get; private set; }
+    public Money CleeningFeeAmount { get; private set; }
     public DateTime? LastBookedOnUtc { get; private set; }
     public List<Amenity> Amenities { get; private set; } = new();
 }

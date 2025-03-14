@@ -2,8 +2,10 @@
 
 public record Currency
 {
-    private static readonly Currency Usd = new("USD");
-    private static readonly Currency Eru = new("ERU");
+    internal static readonly Currency None = new("");
+    public static readonly Currency Usd = new("USD");
+    public static readonly Currency Eru = new("ERU");
+
     private Currency(string code) {
         Code = code;
     }
