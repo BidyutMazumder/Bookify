@@ -1,4 +1,5 @@
 ﻿using Bookify.Domain.Abstraction;
+using Bookify.Domain.Shared;
 
 namespace Bookify.Domain.Apartments;
 public sealed class Apartment: Entity
@@ -8,24 +9,24 @@ public sealed class Apartment: Entity
         Name name,
         Description description,
         Address address,
-        Money priceAmount,
-        Money cleeningFeeAmount,
+        Money price,
+        Money cleeningFee,
         List<Amenity> amenities
         ) : base(id)
     {
         Name = name;
         Description = description;
         Address = address;
-        PriceAmount = priceAmount;
-        CleeningFeeAmount = cleeningFeeAmount;
+        Price = price;
+        CleeningFee = cleeningFee;
         Amenities = amenities;
     }
 
     public Name Name { get; private set; }
     public Description Description { get; private set; }
     public Address Address { get; private set; }
-    public Money PriceAmount { get; private set; }
-    public Money CleeningFeeAmount { get; private set; }
+    public Money Price { get; private set; }
+    public Money CleeningFee { get; private set; }
     public DateTime? LastBookedOnUtc { get; private set; }
     public List<Amenity> Amenities { get; private set; } = new();
 }
