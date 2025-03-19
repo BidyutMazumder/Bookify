@@ -8,7 +8,7 @@ public sealed class Booking : Entity
 {
     private Booking(
         Guid id,
-        Guid appertmentId,
+        Guid apartmentId,
         Guid userId,
         DateRange duration,
         Money priceForPeriod,
@@ -19,7 +19,7 @@ public sealed class Booking : Entity
         DateTime createdOnUtc
         ) : base(id)
     {
-        AppertmentId = appertmentId;
+        ApartmentId = apartmentId;
         UserId = userId;
         DateRange = duration;
         PriceForPeriod = priceForPeriod;
@@ -29,7 +29,7 @@ public sealed class Booking : Entity
         Status = status;
         CreatedOnUtc = createdOnUtc;
     }
-    public Guid AppertmentId { get; private set; }
+    public Guid ApartmentId { get; private set; }
     public Guid UserId { get; private set; }
     public DateRange DateRange { get; private set; }
     public Money PriceForPeriod { get; private set; }
@@ -44,7 +44,7 @@ public sealed class Booking : Entity
     public DateTime? CancelledOnUtc { get; private set; }
 
     public static Booking Reserve(
-        Guid appertmentId,
+        Guid apartmentId,
         Guid userId,
         DateRange duration,
         DateTime utcNow,
@@ -53,7 +53,7 @@ public sealed class Booking : Entity
     {
         var booking = new Booking(
             Guid.NewGuid(),
-            appertmentId,
+            apartmentId,
             userId,
             duration,
             pricingDetails.PriceForPeriod,
