@@ -1,4 +1,4 @@
-﻿using Bookify.Domain.Abstraction;
+﻿using Bookify.Domain.Abstractions;
 
 namespace Bookify.Domain.Users.Events;
 
