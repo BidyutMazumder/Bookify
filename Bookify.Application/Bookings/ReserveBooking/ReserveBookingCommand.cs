@@ -5,8 +5,8 @@ namespace Bookify.Application.Bookings.ReserveBooking;
 
 public record ReserveBookingCommand
     (
-        Guid AppartmentId,
+        Guid ApartmentId,
         Guid UserId,
-        DateTime StartDate,
-        DateTime EndDate
+        DateOnly StartDate,
+        DateOnly EndDate
     ): ICommand<Guid>;

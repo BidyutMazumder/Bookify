@@ -8,7 +8,7 @@ public static class BookingErrors
     public static Error NotFound = new(
         "Booking.Found", 
         "The booking with the  specified identifire was not found");
-    public static Error OverLap = new(
+    public static Error Overlap = new(
         "Booking .OverLap",
         "The current booking is overlapping with an existing one");
     public static Error NotReserved = new(
