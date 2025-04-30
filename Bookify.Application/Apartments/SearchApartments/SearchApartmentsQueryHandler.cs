@@ -32,6 +32,8 @@ internal sealed class SearchApartmentsQueryHandler :
         }
         using var connection  = _sqlConnectionFactory.CreateConnection();
 
+        //we need to get the address of the apartment
+        // but we need to know why the apartment is available
         const string sql = """
                 SELECT
                 a.id AS Id,
