@@ -32,12 +32,12 @@ public class PricingService
         }
         var totalPrice = Money.Zero();
         totalPrice += priceForPeriod;
-        if (!apartment.CleeningFee.IsZero())
+        if (!apartment.CleaningFee.IsZero())
         {
-            totalPrice += apartment.CleeningFee;
+            totalPrice += apartment.CleaningFee;
         }
         totalPrice += amenitiesUpcharge;
 
-        return new PricingDetails(priceForPeriod, apartment.CleeningFee, amenitiesUpcharge, totalPrice);
+        return new PricingDetails(priceForPeriod, apartment.CleaningFee, amenitiesUpcharge, totalPrice);
     }
 }
