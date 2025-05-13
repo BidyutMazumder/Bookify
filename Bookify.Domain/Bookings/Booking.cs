@@ -25,7 +25,7 @@ public sealed class Booking : Entity
         Duration = duration;
         PriceForPeriod = priceForPeriod;
         CleaningFee = cleaningFee;
-        AmenitiesUpcharge = amenitiesUpcharge;
+        AmenitiesUpCharge = amenitiesUpcharge;
         TotalPrice = totalPrice;
         Status = status;
         CreatedOnUtc = createdOnUtc;
@@ -35,7 +35,7 @@ public sealed class Booking : Entity
     public DateRange Duration { get; private set; }
     public Money PriceForPeriod { get; private set; }
     public Money CleaningFee { get; private set; }
-    public Money AmenitiesUpcharge { get; private set; }
+    public Money AmenitiesUpCharge { get; private set; }
     public Money TotalPrice { get; private set; }
     public BookingStatus Status { get; private set; }
     public DateTime? CreatedOnUtc { get; private set; }
