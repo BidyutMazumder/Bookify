@@ -7,6 +7,7 @@ public abstract class Entity
     {
         Id = id;
     }
+    protected Entity() { }
     public Guid Id { get; init; }
 
     public IReadOnlyCollection<IDomainEvent> GetDomainEvents()
