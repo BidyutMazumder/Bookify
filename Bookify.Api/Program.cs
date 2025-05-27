@@ -1,3 +1,4 @@
+using Bookify.Api.Extension;
 using Bookify.Api.ServiceRegestration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +22,8 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
     app.UseSwagger();
     app.UseSwaggerUI();
+    //app.ApplyMigrations();
+    //app.SeedData();
 }
 app.MapHealthChecks("/health");
 app.UseHttpsRedirection();
