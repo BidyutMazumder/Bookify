@@ -27,6 +27,7 @@ if (app.Environment.IsDevelopment())
 }
 app.MapHealthChecks("/health");
 app.UseHttpsRedirection();
+app.UseCustomExceptionHandler();
 
 app.UseAuthorization();
 

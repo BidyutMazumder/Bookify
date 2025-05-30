@@ -1,4 +1,5 @@
 ﻿using Bogus;
+using Bookify.Api.Middleware;
 using Bookify.Application.Abstractions.Data;
 using Bookify.Domain.Apartments;
 using Dapper;
@@ -50,5 +51,10 @@ internal static class SeedDataExtensions
 
 
         connection.Execute(sql, apartments);
+    }
+
+    public static void UseCustomExceptionHandler(this IApplicationBuilder app)
+    {
+        app.UseMiddleware<ExceptionHandlingMiddleware>();
     }
 }
