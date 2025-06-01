@@ -21,3 +21,17 @@ services:
       - ./.containers/database:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+
+  bookify-idp:
+    image: quay.io/keycloak/keycloak:26.2.5
+    container_name: Bookify.Identity
+    command: start-dev
+    environment:
+      - KC_BOOTSTRAP_ADMIN_USERNAME=admin
+      - KC_BOOTSTRAP_ADMIN_PASSWORD=admin
+      - KEYCLOAK_IMPORT=/opt/keycloak/data/import/realm.json
+    volumes:
+      - ./.containers/identity:/opt/jboss/keycloak/standalone/data
+      - ./.files/bookify-realm-export.json:/opt/keycloak/data/import/realm.json
+    ports:
+      - 18080:8080
