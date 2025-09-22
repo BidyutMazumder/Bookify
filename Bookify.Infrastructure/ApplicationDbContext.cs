@@ -2,7 +2,6 @@
 using Bookify.Domain.Abstractions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic;
 
 namespace Bookify.Infrastructure;
 
@@ -32,7 +31,7 @@ public sealed class ApplicationDbContext: DbContext, IUnitOfWork
         }
         catch(DbUpdateConcurrencyException ex)
         {
-            throw new ConcurrencyException("Concurrency exception occered", ex);
+            throw new ConcurrencyException("Concurrency exception occurred", ex);
         }
     }
 
